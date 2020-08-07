@@ -30,7 +30,7 @@ var carro = {
 carro.preco = 3000
 console.log(carro.preco)
 
-//4. Crie um objeto de um cachorroque represente um labrador de cor preta, com 10 anos, que late ao ver um homem.
+//4. Crie um objeto de um cachorro que represente um labrador de cor preta, com 10 anos, que late ao ver um homem.
 var cachorro = {
     raca: 'Labrador',
     cor: 'Preta',
