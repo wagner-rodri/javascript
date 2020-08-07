@@ -1,4 +1,4 @@
-//Crie uma função para vericar se um valor é true
+//01. Crie uma função para vericar se um valor é true
 function corLaranja(cor) {
     if (typeof cor !== 'string') { //Verifica se oque foi digitado é uma palavra
         return 'Por favor digite uma palavra'
@@ -10,7 +10,7 @@ function corLaranja(cor) {
 }
 console.log(corLaranja('laranja'))
 
-//Crie uma função matemática que retone o perímetro de um quadrado
+//02. Crie uma função matemática que retone o perímetro de um quadrado
 function perimetroQuadrado(lado) {
     if (typeof lado !== 'number') { //Verifica se oque foi digitado é um número
         return 'Por favor digite um número'
@@ -22,7 +22,7 @@ function perimetroQuadrado(lado) {
 console.log(`O perímetro do quadrado com o lado selecionado é ${perimetroQuadrado(10)}`)
 
 /*
-Crie uma função que retorne o seu nome completo;
+03. Crie uma função que retorne o seu nome completo;
 Ela deve conter as variáveis nome e sobre nome.
 */
 function nomeCompleto (nome, sobrenome) {
@@ -48,7 +48,7 @@ function ePar (numero) {
 }
 console.log(ePar(5))
 
-//Crie uma função que retorne o tipo de dado que foi passado nela
+//04. Crie uma função que retorne o tipo de dado que foi passado nela
 function tipo (dado) {
     switch (typeof dado) {
         case 'number':
@@ -64,14 +64,14 @@ function tipo (dado) {
 }
 tipo('oi')
 
-//Crie uma função usando o addEventListener onde ao dar scroll na tela apareca seu nome
+//05. Crie uma função usando o addEventListener onde ao dar scroll na tela apareca seu nome
 addEventListener('scroll', function() {
     console.log('Wagner Rodrigues')
 }) //Foi necessário criar uma lista com linhas suficientes para ativar o scroll para conseguir dar o scroll e aparecer o nome
 
 
 /*
-Corrija o erro abaixo
+06. Corrija o erro abaixo
 function precisaVisitar(paisesVisitados) {
     var totalPaises = 193
     return `Ainda faltam ${totalPaises - paisesVisitados} países para visitar`
