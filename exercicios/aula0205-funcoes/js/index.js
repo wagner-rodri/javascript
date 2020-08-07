@@ -63,3 +63,35 @@ function tipo (dado) {
     }
 }
 tipo('oi')
+
+//Crie uma função usando o addEventListener onde ao dar scroll na tela apareca seu nome
+addEventListener('scroll', function() {
+    console.log('Wagner Rodrigues')
+}) //Foi necessário criar uma lista com linhas suficientes para ativar o scroll para conseguir dar o scroll e aparecer o nome
+
+
+/*
+Corrija o erro abaixo
+function precisaVisitar(paisesVisitados) {
+    var totalPaises = 193
+    return `Ainda faltam ${totalPaises - paisesVisitados} países para visitar`
+}    
+function jaVisitei(paisesVisitados) {
+    return `Já visitei ${paisesVisitados} de um total de ${totalPaises} países`
+}
+precisaVisitar(28)
+jaVisitei(20)
+*/
+
+/*Correção
+Retirada a variável totalPaises de dentro da função precisaVisitar e adicionado console.log em cada declaração das variáveis das funções (linhas95 e 96)
+*/
+var totalPaises = 193 // Retirado totalPaises de dentro da função precisaVisitar
+function precisaVisitar(paisesVisitados) {
+    return `Ainda faltam ${totalPaises - paisesVisitados} países para visitar`
+}    
+function jaVisitei(paisesVisitados) {
+    return `Já visitei ${paisesVisitados} de um total de ${totalPaises} países`
+}
+console.log(precisaVisitar(28)) //Add console.log
+console.log(jaVisitei(20)) //Add console.log
