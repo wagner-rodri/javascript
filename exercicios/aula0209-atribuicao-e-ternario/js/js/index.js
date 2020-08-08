@@ -6,5 +6,5 @@ console.log(scroll)
 //2. Atribua true para a variável darCredito, caso o cliente possua carro e casa, e falsa caso contrário
 var possuiCarro = true
 var possuiCasa = true
-var darCredito = (possuiCarro == true && possuiCasa == true) ? true : false
+var darCredito = (possuiCarro && possuiCasa) ? true : false
 console.log (darCredito)
