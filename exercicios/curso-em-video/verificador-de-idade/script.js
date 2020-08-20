@@ -51,19 +51,3 @@ function verificar() {
     }
 
 }
-
-
-/*
-function verificar() {
-    var data = new Date()
-    var ano = data.getFullYear() 
-    var fano = window.document.getElementById('txtano')
-    var res = document.querySelector('div#res')    
-    //Verificação do ano
-    if(fano.value.length == 0 || fano.value > ano){
-        window.alert('[ERRO] Verifique as informações e tente novamente!')
-    }
-
-
-}
-*/
