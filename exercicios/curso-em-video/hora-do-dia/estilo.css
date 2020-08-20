@@ -1,20 +1,27 @@
 body {
     background: rgb(100, 100, 255);
-    font: arial normal 15pt;
+    font: normal 15pt arial;
     text-align: center;
 }
 
 header {
     color: white; 
+    font: arial normal 15pt;
 }
 
 section {
+    font: normal 15pt arial;
     background: white;
     border-radius: 10px;
     padding: 15px;
     width: 500px;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.623) 5px 5px 10px;
+}
+
+section div {
+    padding: 8px;
+    font: normal 15pt arial;
 }
 
 footer {
