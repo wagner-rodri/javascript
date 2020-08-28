@@ -1,7 +1,7 @@
 
 //Step #1
 let userInput = 10;
-let result = '';
+let result;
 
 //Step #2
 result = userInput + 18;
