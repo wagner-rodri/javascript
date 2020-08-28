@@ -1,4 +1,9 @@
-let currentResult = 0;
-currentResult += 10;
+const defaultResult = 0;
+const currentResult = defaultResult;
 
-outputResult(currentResult,'');
+function add() {
+    currentResult += userInput.value;
+    outputResult(currentResult,calculationDescription)
+}
+
+addBtn.addEventListener('click', add)
