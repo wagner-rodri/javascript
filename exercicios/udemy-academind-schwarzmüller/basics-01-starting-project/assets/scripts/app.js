@@ -32,6 +32,11 @@ function writeToLog(
 
 function calculateResult(calculationType) {
     const enteredNumber = getUserNumberInput();
+    
+    if (enteredNumber === 0 && calculationType === 'DIVIDE') {
+        return;
+    }
+
     const initialResult = currentResult;
     let mathOperator;
     if (calculationType === 'ADD') {
