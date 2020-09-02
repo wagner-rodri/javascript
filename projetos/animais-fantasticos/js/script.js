@@ -48,7 +48,7 @@ function scrollSuave() {
     const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
 
     function scrollToSection(event) {
-        //event.preventDefault();
+        event.preventDefault();
         const href = event.currentTarget.getAttribute('href');
         const section = document.querySelector(href);
         
@@ -56,14 +56,6 @@ function scrollSuave() {
             behavior: 'smooth',
             block: 'start',
         });
-        /*     
-        Usando o window.scrollTo
-        const topo = section.offSetTop;
-        window.scrollTo({
-            top: topo,
-            behavior: 'smooth',
-        }); 
-        */
     }
     linksInternos.forEach ((link) => {
         link.addEventListener('click',scrollToSection);
