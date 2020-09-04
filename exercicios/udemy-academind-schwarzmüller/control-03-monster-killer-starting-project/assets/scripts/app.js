@@ -15,6 +15,7 @@ const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 let enteredValue = prompt('please, set a max life for you and for the monster:');
 let chosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
+let lastLogEntry;
 
 if(isNaN(chosenMaxLife) || chosenMaxLife < 0) {
     alert('Invalid max life! Max life set up to 100')
@@ -160,19 +161,16 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
-    // for
-    // for(let i = 0; i < battleLog.length; i++){
-    //     console.log(battleLog[i])
-    // }
-    // console.log(battleLog);
-    //
-    // for-of
     i = 0;
     for (const logEntry of battleLog) {
-        console.log(`#${i}`);
-            for (const key in logEntry) {
-                console.log(`${key} => ${logEntry[key]}`)
-            }
+        if ((!lastLogEntry && lastLogEntry !== 0) || lastLogEntry < i) {    
+            console.log(`#${i}`);
+                for (const key in logEntry) {
+                    console.log(`${key} => ${logEntry[key]}`)
+                }
+                lastLogEntry = i;
+                break;
+        }
         i++
     }
 }
