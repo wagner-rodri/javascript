@@ -11,6 +11,7 @@ const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
 const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
 const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 
+// Gets life value from the player
 function getMaxLifeValues() {
     let enteredValue = prompt('please, set a max life for you and for the monster:');
 
@@ -23,6 +24,7 @@ function getMaxLifeValues() {
 
 let chosenMaxLife;
 
+// Validates the life value provided by the player
 try {
     chosenMaxLife = getMaxLifeValues();
 } catch (error) {
@@ -38,6 +40,7 @@ let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
 let hasBonusLife = true;
 
+// Creates new objetcs to each round in the game with its information in it
 function writeToLog (ev, val, monsterHealth, playerHealth) {
     let logEntry = {
         event: ev,
@@ -67,12 +70,14 @@ function writeToLog (ev, val, monsterHealth, playerHealth) {
 
 adjustHealthBars(chosenMaxLife);
 
+// Resets the game when the round ends
 function reset() {
     currentMonsterHealth = chosenMaxLife;
     currentPlayerHealth = chosenMaxLife;
     resetGame(chosenMaxLife)
 }
 
+// End round function
 function endRound() {
     const initialPlayerHealth = currentPlayerHealth
     const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
@@ -123,6 +128,7 @@ function endRound() {
     }
 }
 
+// Player's attack function
 function attackMonster(mode) {
     let maxDamage = 
     mode === MODE_ATTACK 
@@ -152,6 +158,7 @@ function strongAttackHandler() {
     attackMonster(MODE_STRONG_ATTACK);
 }
 
+// Player's heal function
 function healPlayerHandler() {
     let healValue;
     if (currentPlayerHealth >= chosenMaxLife - HEAL_VALUE) {
@@ -172,6 +179,7 @@ function healPlayerHandler() {
     endRound();
 }
 
+// Show Log's button funtion
 function printLogHandler() {
     i = 0;
     for (const logEntry of battleLog) {
