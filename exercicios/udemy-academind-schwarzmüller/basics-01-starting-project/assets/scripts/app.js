@@ -57,25 +57,25 @@ function calculateResult(calculationType) {
 }
 
 //Mathematical functions
-function add() {
-    calculateResult('ADD');
+function add(operator) {
+    calculateResult(operator);
 }
 
-function subtract() {
-    calculateResult('SUBTRACT');
+function subtract(operator) {
+    calculateResult(operator);
 }
 
-function multiply() {
-    calculateResult('MULTIPLY');
+function multiply(operator) {
+    calculateResult(operator);
 }
 
-function divide() {
-    calculateResult('DIVIDE');
+function divide(operator) {
+    calculateResult(operator);
 }
 
 
-addBtn.addEventListener('click', add);
-subtractBtn.addEventListener('click', subtract);
-multiplyBtn.addEventListener('click', multiply);
-divideBtn.addEventListener('click', divide);
+addBtn.addEventListener('click', add.bind(this, 'ADD'));
+subtractBtn.addEventListener('click', subtract.bind(this, 'SUBTRACT'));
+multiplyBtn.addEventListener('click', multiply.bind(this, 'MULTIPLY'));
+divideBtn.addEventListener('click', divide.bind(this, 'DIVIDE'));
 
