@@ -23,8 +23,9 @@ const renderMovies = (filter = '') => {
         const movieEl = document.createElement('li');
         const {info,...otherProps} = movie;
         console.log(otherProps);
-        const {title: movieTitle} = info;
-        let text = movieTitle + ' - ';
+        // const {title: movieTitle} = info;
+        // const {getForamattedTitle} = movie;
+        let text = movie.getForamattedTitle() + ' - ';
         for (const key in info) {
             if (key !== 'title') {
                 text += `${key}: ${info[key]}`;
@@ -53,7 +54,10 @@ const AddMovieHandler = () => {
             title,
             [extraName]: extraValue
         },
-        id: Math.random()
+        id: Math.random(),
+        getForamattedTitle: function () {
+            return this.info.title.toUpperCase();
+        }
     };
     movies.push(newMovie);
     renderMovies();
