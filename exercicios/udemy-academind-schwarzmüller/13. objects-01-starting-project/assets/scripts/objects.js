@@ -55,7 +55,7 @@ const AddMovieHandler = () => {
             [extraName]: extraValue
         },
         id: Math.random(),
-        getForamattedTitle: function () {
+        getForamattedTitle() {
             return this.info.title.toUpperCase();
         }
     };
