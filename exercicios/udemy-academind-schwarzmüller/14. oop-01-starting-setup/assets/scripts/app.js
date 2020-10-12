@@ -1,6 +1,39 @@
+class Product {
+    title = 'DEFAULT';
+    imageUrl;
+    description;
+    price;
+
+    constructor(title, image, desc, price) {
+        this.title = title;
+        this.imageUrl = image;
+        this.description = desc;
+        this.price = price;
+    }
+}
+
+class ShoppingCart {
+    items = [];
+
+    render () {
+        const cartEl = document.createElement('section');
+        cartEl.innerHTML = `
+            <h2>Total: \$${0}</h2>
+            <button>Order Now!</button>
+        `;
+        cartEl.className = 'cart';
+        return cartEl
+    }
+}
+
 class ProductItem {
     constructor(product) {
         this.product = product;
+    }
+
+    addToCart () {
+        console.log('Adding product to cart...');
+        console.log(this.product.title);
     }
 
     render() {
@@ -17,21 +50,9 @@ class ProductItem {
                     </div>
                 </div>
             `;
+        const addCartButton = prodEl.querySelector('button');
+        addCartButton.addEventListener('click', this.addToCart.bind(this))
         return prodEl;
-    }
-}
-
-class Product {
-    title = 'DEFAULT';
-    imageUrl;
-    description;
-    price;
-
-    constructor(title, image, desc, price) {
-        this.title = title;
-        this.imageUrl = image;
-        this.description = desc;
-        this.price = price;
     }
 }
 
@@ -54,7 +75,6 @@ class ProductList {
     constructor() {};
 
     render() {
-        const renderHook = document.getElementById('app');
         const prodList = document.createElement('ul');
         prodList.className = 'product-list';
         for (const prod of this.products) {
@@ -62,9 +82,23 @@ class ProductList {
             const prodEl = productItem.render();
             prodList.append(prodEl);
         }
-        renderHook.append(prodList);
+        return prodList;
     }
 }
 
-const produList = new ProductList ();
-produList.render();
+class Shop {
+    render() {
+        const renderHook = document.getElementById('app');
+        
+        const cart = new ShoppingCart();
+        const cartEl = cart.render();
+        const productList = new ProductList();
+        const prodListEl = productList.render();
+        
+        renderHook.append(cartEl);
+        renderHook.append(prodListEl);
+    }
+}
+
+const shop = new Shop();
+shop.render()
