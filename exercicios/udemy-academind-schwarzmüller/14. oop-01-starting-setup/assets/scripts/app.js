@@ -59,18 +59,18 @@ class ShoppingCart extends Component {
     }
 
     constructor(renderHookId) {
-        super(renderHookId);
+        super(renderHookId, false);
+        this.orderProducts = () => {
+            console.log('Ordering...');
+            console.log(this.items);
+        }
+        this.render();
     }
 
     addProduct(product) {
         const updatedItems = [...this.items];
         updatedItems.push(product);
         this.cartItems = updatedItems;
-    }
-
-    orderProducts() {
-        console.log('Ordering...')
-        console.log(this.items)
     }
 
     render () {
@@ -80,7 +80,8 @@ class ShoppingCart extends Component {
             <button>Order Now!</button>
         `;
         const orderButton = cartEl.querySelector('button');
-        orderButton.addEventListener('click', () => this.orderProducts())
+        // orderButton.addEventListener('click', () => this.orderProducts())
+        orderButton.addEventListener('click', this.orderProducts)
         this.totalOutput = cartEl.querySelector('h2');
     }
 }
